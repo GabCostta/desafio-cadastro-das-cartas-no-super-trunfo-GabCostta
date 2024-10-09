@@ -1,83 +1,53 @@
-# ⚠️ Importante!!!
-Criamos um novo link para o primeiro desafio porque o link original apresentou problemas. Quem já completou o desafio pode continuar usando o link original para enviar seu repositório. Se você ainda não começou o desafio, utilize o novo link.
+# Sistema de Cadastro de Cidades - Super Trunfo Países
 
-# Desafio Super Trunfo - Países - Cadastro das Cartas
+Este projeto em C implementa um sistema de cadastro de cidades para um jogo no estilo **Super Trunfo** com o tema **Países**. Cada cidade cadastrada contém atributos básicos como código, nome, população, área, PIB e número de pontos turísticos. Além disso, o sistema calcula e exibe propriedades adicionais, como a **Densidade Populacional** e o **PIB per Capita** com base nos dados fornecidos.
 
-Bem-vindo ao desafio "Super Trunfo - Países"! No jogo Super Trunfo, os jogadores comparam as propriedades das cartas para determinar a mais forte. O tema deste Super Trunfo é "Países," onde você comparará as propriedades das cidades.
+## Funcionalidades
 
-A empresa MateCheck contratou você para desenvolver a parte inicial do jogo, que consiste no cadastro das cartas.
+- **Cadastro de Cidades**: O usuário pode inserir dados para uma cidade, como:
+  - Código da cidade (por exemplo, A01, B02).
+  - Nome da cidade.
+  - População (número de habitantes).
+  - Área da cidade em km².
+  - PIB da cidade em bilhões de unidades monetárias.
+  - Número de pontos turísticos.
 
-O desafio está dividido em três níveis: Novato, Aventureiro e Mestre, com cada nível adicionando mais complexidade ao anterior. Você deve escolher qual desafio quer realizar.
+- **Propriedades Calculadas**:
+  - **Densidade Populacional**: Calculada dividindo a população pela área da cidade (habitantes por km²).
+  - **PIB per Capita**: Calculado dividindo o PIB total pela população, fornecendo uma estimativa de produção econômica por habitante.
 
-### 🚨 Atenção: 
-O nível Novato do desafio é focado apenas no cadastro das cartas, utilizando as funções scanf para ler os dados e printf para exibi-los.
+## Exemplo de Entrada e Saída
 
-## 🎮 Nível Novato
+### Entrada
+O sistema solicita ao usuário que insira os seguintes dados para cada cidade:
 
-No nível Novato, você iniciará criando o sistema básico do jogo Super Trunfo com o tema "Países". As cartas serão divididas por estados, cada um com quatro cidades. 
+Digite o código da cidade (ex: A01): A01 Digite o nome da cidade: São Paulo Digite a população da cidade: 12345678 Digite a área da cidade em km²: 1521.11 Digite o PIB da cidade em bilhões: 700.5 Digite o número de pontos turísticos: 5
 
-Cada país será dividido em oito estados, identificados pelas letras de A a H. Cada estado terá quatro cidades, numeradas de 1 a 4. A combinação da letra do estado e o número da cidade define o código da carta (por exemplo, A01, A02, B01, B02).
+### Saída
+Após inserir os dados, o sistema exibirá as informações cadastradas, incluindo as propriedades calculadas:
 
-### 🚩 Objetivo:
-- Criar cartas representando cidades, contendo as seguintes propriedades:
-  - **População**
-  - **Área**
-  - **PIB**
-  - **Número de pontos turísticos**
-  
-### ⚙️ Funcionalidades do Sistema:
-- O sistema permitirá ao usuário cadastrar cartas de cidades, inserindo manualmente os dados via terminal de comando.
-- Após o cadastro, o sistema exibirá os dados de cada cidade de forma clara e organizada.
+Dados da cidade cadastrada: Código: A01 Nome: São Paulo População: 12345678 Área: 1521.11 km² PIB: 700.50 bilhões Número de pontos turísticos: 5 Densidade Populacional: 8112.99 habitantes/km² PIB per Capita: 56715.05 unidades monetárias
 
-### 📥 Entrada e 📤 Saída de Dados:
-- O usuário insere os dados de cada carta interativamente.
-- Após o cadastro, os dados são exibidos com todas as propriedades da cidade, uma por linha.
+## Como Compilar e Executar
 
----
+Para compilar o programa, utilize um compilador C como o GCC:
 
-## 🛡️ Nível Aventureiro
 
-No nível Aventureiro, você expandirá o sistema para incluir propriedades calculadas, permitindo uma análise mais detalhada das cartas.
+gcc -o cadastro_cidades cadastro_cidades.c
+Após a compilação, execute o programa:
 
-### 🆕 Diferença em relação ao Nível Novato:
-- **Novas Propriedades Calculadas:**
-  - **Densidade Populacional:** População dividida pela área da cidade.
-  - **PIB per Capita:** PIB total dividido pela população.
 
-### ⚙️ Funcionalidades do Sistema:
-- O sistema agora calculará automaticamente a Densidade Populacional e o PIB per Capita com base nos dados inseridos.
-- Essas novas propriedades serão adicionadas às informações exibidas para cada cidade.
+./cadastro_cidades
 
-### 📥 Entrada e 📤 Saída de Dados:
-- O usuário continua inserindo os dados de cada carta interativamente.
-- O sistema exibirá os dados, incluindo as novas propriedades calculadas, de forma clara e organizada.
-
----
-
-## 🏆 Nível Mestre
-
-No nível Mestre, você implementará comparações entre as cartas, utilizando operadores relacionais e manipulando grandes números com precisão.
-
-### 🆕 Diferença em relação ao Nível Aventureiro:
-- **Comparação de Cartas:**
-  - O sistema permitirá ao usuário comparar duas cartas com base nas propriedades inseridas e calculadas.
-  - Cada carta terá um "Super Poder", que é a soma de todas as propriedades.
-  
-### ⚙️ Funcionalidades do Sistema:
-- O sistema utilizará operadores relacionais para determinar a carta vencedora com base nas propriedades comparadas.
-- A comparação considerará:
-  - **Densidade Populacional:** Vence a carta com menor valor.
-  - **Outras Propriedades:** Vence a carta com maior valor.
-- O resultado das comparações será exibido claramente para cada propriedade.
-
-### 📥 Entrada e 📤 Saída de Dados:
-- O usuário insere as cartas a serem comparadas.
-- O sistema exibe os resultados das comparações, indicando a carta vencedora para cada propriedade.
-
----
-
-Ao concluir todos os níveis, você terá criado um sistema incial para o jogo Super Trunfo, com funcionalidades de cadastro, cálculo e comparação de propriedades. 
-
-Boa sorte e divirta-se programando!
-
-Equipe de Ensino - MateCheck
+Requisitos
+Um compilador de C (GCC, Clang, etc.)
+Conhecimentos básicos de entrada e saída em C.
+Explicação das Novas Funcionalidades
+Densidade Populacional: Calculada dividindo a população pela área, exibida em habitantes por quilômetro quadrado.
+PIB per Capita: Calculado dividindo o PIB total (em unidades monetárias) pela população, fornecendo uma estimativa da riqueza gerada por habitante.
+Melhorias Futuras
+Suporte para cadastrar múltiplas cidades.
+Implementação de um banco de dados simples para armazenar as cidades.
+Expansão para outros atributos relevantes, como IDH, localização geográfica, etc.
+Autor
+Desenvolvido por Gabriel.
